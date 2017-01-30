@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import view.SokoDisplay?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SampleController">
+	<center>
+		<BorderPane prefHeight="200.0" prefWidth="200.0"
+			BorderPane.alignment="CENTER">
+			<top>
+				<MenuBar BorderPane.alignment="CENTER">
+					<menus>
+						<Menu mnemonicParsing="false" text="File">
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#openFile"
+									text="load" />
+								<MenuItem mnemonicParsing="false" onAction="#saveFile"
+									text="save" />
+								<MenuItem mnemonicParsing="false" onAction="#exit"
+									text="Close" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Music">
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#playMusic"
+									text="Play" />
+								<MenuItem mnemonicParsing="false" onAction="#stopMusic"
+									text="Stop" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Help">
+							<items>
+								<MenuItem mnemonicParsing="false" text="About" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+			</top>
+			<left>
+				<VBox prefHeight="500.0" prefWidth="70.0" BorderPane.alignment="CENTER">
+					<children>
+						<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level Timer:">
+							<VBox.margin>
+								<Insets left="10.0" top="40.0" />
+							</VBox.margin>
+							<font>
+								<Font name="Tahoma" size="12.0" />
+							</font>
+						</Text>
+						<Text fx:id="timer" fill="GREY" strokeType="OUTSIDE"
+							strokeWidth="0.0" text="0">
+							<font>
+								<Font name="Arial Black" size="10.0" />
+							</font>
+							<VBox.margin>
+								<Insets left="10.0" />
+							</VBox.margin>
+						</Text>
+						<Text strokeType="OUTSIDE" strokeWidth="0.0" text="Steps:">
+							<VBox.margin>
+								<Insets left="10.0" top="40.0" />
+							</VBox.margin>
+							<font>
+								<Font name="Tahoma" size="12.0" />
+							</font>
+						</Text>
+						<Text fx:id="stepscount" fill="GREY" strokeType="OUTSIDE"
+							strokeWidth="0.0" text="0">
+							<font>
+								<Font name="Arial Black" size="10.0" />
+							</font>
+							<VBox.margin>
+								<Insets left="10.0" />
+							</VBox.margin>
+						</Text>
+
+					</children>
+				</VBox>
+			</left>
+			<center>
+				<SokoDisplay fx:id="sokoDisplayer" height="550.0" width="450.0"
+					BorderPane.alignment="CENTER" />
+			</center>
+		</BorderPane>
+	</center>
+</BorderPane>
